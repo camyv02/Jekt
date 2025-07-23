@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jekt - Gerenciamento de Projetos</title>
+
+  <!-- Ícones e Chart.js -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- CSS externos -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="profile.css" />
+
+  <!-- JS do perfil -->
+  <script src="profile.js" defer></script>
+</head>
+<body>
+  <!-- INTRO -->
+  <div class="intro" id="intro">
+    <img src="Logo_Jekt.png" alt="Logo Jekt" class="intro-logo" />
+  </div>
+  <div id="overlayBackground"></div>
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <button id="closeSidebarBtn" class="close-sidebar-btn" aria-label="Fechar menu">×</button>
+    <div class="logo-container">
+      <img src="Logo_Jekt.png" alt="Logo Jekt" class="logo-img" />
+      <span class="logo-text">Jekt</span>
+    </div>
+    <ul class="menu">
+      <li class="active"><span class="material-icons">home</span>Início</li>
+      <li><span class="material-icons">folder</span> Projetos</li>
+      <li><span class="material-icons">groups</span> Equipes</li>
+      <li><span class="material-icons">person</span> Cliente</li>
+      <li><span class="material-icons">menu_book</span> Documentação</li>
+      <li><span class="material-icons">speed</span> Desenvolvimento Ágil</li>
+      <li><span class="material-icons">bar_chart</span> Métricas</li>
+      <li><span class="material-icons">warning</span> Riscos</li>
+    </ul>
+    <div class="copyright">
+      © 2025 Jekt - Todos os direitos reservados.
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content" id="mainContent">
+    <div class="top-bar">
+      <button class="toggle-btn" id="toggleBtn" title="Mostrar/ocultar menu">☰</button>
+      <div class="search-box">
+        <span class="material-icons search-icon">search</span>
+        <input type="text" placeholder="Pesquisar projetos, equipes..." />
+      </div>
+      <div id="profile-root"></div>
+    </div>
+
+
+    <h1>Início</h1>
+
+    <div class="dashboard">
+      <div class="card">
+        <h2>Criar novo projeto</h2>
+        <button class="btn">+ Novo Projeto</button>
+        <div class="resize-handle"></div>
+      </div>
+      <div class="card">
+        <h2>
+          <span class="material-icons">bar_chart</span>
+          Total de Projetos
+        </h2>
+        <p class="dashboard-number">
+          <span class="material-icons">folder</span> 12
+        </p>
+        <h3 class="risk-title">
+          <span class="material-icons">warning</span>
+          Projetos com Riscos
+        </h3>
+        <p class="dashboard-number risk">
+          <span class="material-icons">warning_amber</span> 2
+        </p>
+        <div class="resize-handle"></div>
+
+      </div>
+
+      <div class="card">
+        <h2><span class="material-icons">update</span> Últimas Atualizações </h2>
+        <ul class="updates-list">
+          <li><span class="material-icons update-item-icon check">check_circle</span> Sprint 3 finalizada - BemolTech</li>
+          <li><span class="material-icons update-item-icon pin">push_pin</span> Cliente aprovou protótipo - Oboticário Team</li>
+          <li><span class="material-icons update-item-icon renew">autorenew</span> Nova tarefa: API - Honda Automation</li>
+          <li><span class="material-icons update-item-icon warning">warning</span> Risco: atraso backend - Jabil Detection</li>
+          <li><span class="material-icons update-item-icon chat">chat</span> Reunião sexta-feira - Coca-Cola Vision</li>
+        </ul>
+        <div class="resize-handle"></div>
+      </div>
+    </div>
+
+    <!-- CARD DE GRÁFICOS -->
+    <div class="chart-card">
+      <h2>Visão geral dos projetos</h2>
+      <div class="chart-container">
+        <div class="chart-box"><canvas id="statusChart"></canvas></div>
+        <div class="chart-box"><canvas id="teamChart"></canvas></div>
+        <div class="chart-box"><canvas id="progressChart"></canvas></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Script principal -->
+  <script src="script.js"></script>
+</body>
+</html>

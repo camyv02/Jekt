@@ -1,0 +1,70 @@
+/* Perfil: ícone no topo direito e dropdown */
+.profile-container {
+  flex: 0 0 auto;
+  margin-left: 20px;; /* já empurra para direita no flex da top-bar */
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10000; /* deixa acima da top-bar */
+  position: relative; /* necessário para o dropdown posicionar corretamente */
+}
+
+.profile-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #30363d;
+  transition: border-color 0.3s ease;
+}
+
+.profile-icon:hover {
+  border-color: #1f6feb;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 48px; /* logo abaixo do ícone */
+  right: 0;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  width: 200px;
+  display: none;
+  flex-direction: column;
+  padding: 8px 0;
+  z-index: 10001; /* acima do container */
+}
+
+.profile-dropdown[aria-hidden="false"] {
+  display: flex;
+}
+
+.profile-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-menu li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  color: #c9d1d9;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.profile-menu li:hover {
+  background: #21262d;
+}
+
+.profile-menu li .material-icons {
+  font-size: 20px;
+  color: #8b949e;
+  user-select: none;
+}
